@@ -1,3 +1,10 @@
+import { Page } from "../../components";
+
 export function Home() {
-  return <h1>Home Page</h1>;
+  return (
+    <Page
+      title="Current Conditions"
+      subtitle="San Francisco Personal Weather Observation Station"
+    ></Page>
+  );
 }
