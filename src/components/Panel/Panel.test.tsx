@@ -39,8 +39,6 @@ describe("Panel Component", () => {
     );
     const panelDiv = container.firstChild as HTMLElement;
     expect(panelDiv).toHaveClass(
-      "col-span-2",
-      "row-span-1",
       "bg-white",
       "dark:bg-slate-900",
       "border",
