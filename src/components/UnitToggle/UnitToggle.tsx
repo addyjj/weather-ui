@@ -1,6 +1,8 @@
+import type { Unit } from "../../types";
+
 interface UnitToggleProps {
-  value: "imperial" | "metric";
-  onChange: (unit: "imperial" | "metric") => void;
+  value: Unit;
+  onChange: (unit: Unit) => void;
 }
 
 export function UnitToggle({ value, onChange }: UnitToggleProps) {
