@@ -11,7 +11,7 @@ export function Home() {
   };
 
   return (
-    <main>
+    <main className="flex-1 overflow-y-auto px-8 py-8">
       <header className="hidden md:flex md:justify-between md:visible mb-8">
         <PageTitle
           title="Current Conditions"
