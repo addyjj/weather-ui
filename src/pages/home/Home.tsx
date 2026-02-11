@@ -1,35 +1,15 @@
-import { useState } from "react";
-import { LastUpdated, PageTitle, Panel, UnitToggle } from "../../components";
-import type { Unit } from "../../types";
+import { Panel } from "../../components";
 
 export function Home() {
-  const [unit, setUnit] = useState<Unit>("metric");
-  const [lastUpdated] = useState<Date>(new Date());
-
-  const handleUnitChange = (value: Unit) => {
-    setUnit(value);
-  };
-
   return (
-    <main className="flex-1 overflow-y-auto px-8 py-8">
-      <header className="hidden md:flex md:justify-between md:visible mb-8">
-        <PageTitle
-          title="Current Conditions"
-          subtitle="San Francisco Personal Weather Observation Station"
-        />
-        <div className="flex gap-9 items-center">
-          <LastUpdated date={lastUpdated} />
-          <UnitToggle value={unit} onChange={handleUnitChange} />
-        </div>
-      </header>
-
+    <main className="flex-1 overflow-y-auto p-4">
       <div className="grid gap-4 md:grid-cols-4 md:auto-rows-min">
         <Panel
           className="md:col-span-2 md:row-span-1 h-60"
           title="Outdoor Temperature"
         />
         <Panel
-          className="md:col-span-2 md:row-span-1 h-60"
+          className="md:col-span-2 md:row-span-1"
           title="Wind Speed & Gusts"
         />
         <Panel title="Precipitation (24h)" />

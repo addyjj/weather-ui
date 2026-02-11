@@ -13,14 +13,19 @@
 
 body {
   font-family: "Space Grotesk", sans-serif;
+  -webkit-tap-highlight-color: transparent;
   @apply bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen;
 }
-.material-symbols-outlined {
-  font-variation-settings:
-    "FILL" 0,
-    "wght" 400,
-    "GRAD" 0,
-    "opsz" 24;
+
+.glass {
+  @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-md border border-white/20 dark:border-slate-800/50;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 button {
