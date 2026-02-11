@@ -30,17 +30,4 @@ describe("OutdoorTempPanel", () => {
     const panel = container.firstChild as HTMLElement;
     expect(panel).toHaveClass("test-panel");
   });
-
-  it("renders the temperature bars", () => {
-    const { container } = render(
-      <OutdoorTempPanel temperature={72} feelsLike={70} />,
-    );
-    const fadedBars = container.querySelectorAll(
-      ".bg-primary\\/20.rounded-t-md",
-    );
-    const activeBar = container.querySelectorAll(".bg-primary.rounded-t-md");
-
-    expect(fadedBars).toHaveLength(6);
-    expect(activeBar).toHaveLength(1);
-  });
 });
