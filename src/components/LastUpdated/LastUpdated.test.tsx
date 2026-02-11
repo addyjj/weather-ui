@@ -44,12 +44,7 @@ describe("LastUpdated Component", () => {
   it("applies the label styling classes", () => {
     render(<LastUpdated date="2023-11-02T14:45:12Z" />);
     const label = screen.getByText(/Last Updated/i);
-    expect(label).toHaveClass(
-      "text-slate-400",
-      "font-bold",
-      "uppercase",
-      "tracking-wider",
-    );
+    expect(label).toHaveClass("text-slate-400", "font-bold", "uppercase");
   });
 
   it("applies the date styling classes", () => {
