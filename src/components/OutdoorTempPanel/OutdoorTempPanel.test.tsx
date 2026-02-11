@@ -21,7 +21,11 @@ describe("OutdoorTempPanel", () => {
 
   it("applies custom className on the panel container", () => {
     const { container } = render(
-      <OutdoorTempPanel className="test-panel" temperature={72} feelsLike={70} />,
+      <OutdoorTempPanel
+        className="test-panel"
+        temperature={72}
+        feelsLike={70}
+      />,
     );
     const panel = container.firstChild as HTMLElement;
     expect(panel).toHaveClass("test-panel");
