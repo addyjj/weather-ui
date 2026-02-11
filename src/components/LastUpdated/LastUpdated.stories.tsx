@@ -12,6 +12,5 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   args: {
     date: "2023-11-02T14:45:12Z",
-    label: "Last Updated",
   },
 };

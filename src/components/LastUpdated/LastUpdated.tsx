@@ -1,36 +1,25 @@
 import { DateTime } from "luxon";
 
-interface LastUpdatedProps {
+type LastUpdatedProps = {
   date: Date | string;
-  label?: string;
-  icon?: string;
-  className?: string;
-}
+};
 
 export function LastUpdated({ date }: LastUpdatedProps) {
-  let formattedDate = "";
+  let dt: DateTime = DateTime.now();
+
   if (date instanceof Date) {
-    formattedDate = DateTime.fromJSDate(date).toLocaleString(
-      DateTime.DATETIME_MED,
-    );
+    dt = DateTime.fromJSDate(date);
   } else if (typeof date === "string") {
-    formattedDate = DateTime.fromISO(date).toLocaleString(
-      DateTime.DATETIME_MED,
-    );
-  } else {
-    formattedDate = String(date);
+    dt = DateTime.fromISO(date);
   }
 
   return (
-    <div className={`flex flex-col items-end`}>
-      <span className="text-[10px] text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest">
+    <div className="flex flex-col items-end text-[10px]">
+      <span className="text-slate-400 font-bold uppercase tracking-wider">
         Last Updated
       </span>
-      <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold">
-        <span className="material-symbols-outlined text-sm text-green-500">
-          schedule
-        </span>
-        <span>{formattedDate}</span>
+      <div className="flex items-center gap-1 font-bold text-green-500">
+        {dt.toLocaleString(DateTime.DATETIME_SHORT)}
       </div>
     </div>
   );
