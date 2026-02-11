@@ -1,4 +1,4 @@
-import { OutdoorTempPanel, Panel } from "../../components";
+import { OutdoorTempPanel, Panel, WindSpeedPanel } from "../../components";
 
 export function Home() {
   return (
@@ -9,9 +9,11 @@ export function Home() {
           temperature={72.5}
           feelsLike={74.2}
         />
-        <Panel
+        <WindSpeedPanel
           className="md:col-span-2 md:row-span-1"
-          title="Wind Speed & Gusts"
+          gust={18.2}
+          speed={12.4}
+          directionDegrees={120}
         />
         <Panel title="Precipitation (24h)" />
         <Panel title="Solar Radiation" />
