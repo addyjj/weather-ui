@@ -58,7 +58,7 @@ export function WindSpeedPanel({
           navigation
         </span>
         <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
-          {directionLabel} • Max Gust {gust}
+          {directionLabel} • Max Gust {gust} mph
         </p>
       </div>
     </Panel>

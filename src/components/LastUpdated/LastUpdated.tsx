@@ -15,9 +15,7 @@ export function LastUpdated({ date }: LastUpdatedProps) {
 
   return (
     <div className="flex flex-col items-end text-[10px] sm:text-sm">
-      <span className="text-slate-400 font-bold uppercase">
-        Last Updated
-      </span>
+      <span className="text-slate-400 font-bold uppercase">Last Updated</span>
       <div className="flex items-center gap-1 font-bold text-green-500">
         {dt.toLocaleString(DateTime.DATETIME_SHORT)}
       </div>

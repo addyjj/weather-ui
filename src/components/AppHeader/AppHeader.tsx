@@ -3,11 +3,13 @@ import { LastUpdated } from "../LastUpdated";
 type AppHeaderProps = {
   stationName?: string;
   location?: string;
+  lastUpdated?: Date;
 };
 
 export function AppHeader({
   stationName = "Home Station",
   location = "San Francisco, CA",
+  lastUpdated = new Date(),
 }: AppHeaderProps) {
   return (
     <header className="sticky top-0 z-50 glass px-4 py-3 flex items-center justify-between">
@@ -22,7 +24,7 @@ export function AppHeader({
           </p>
         </div>
       </div>
-      <LastUpdated date={new Date()} />
+      <LastUpdated date={lastUpdated} />
     </header>
   );
 }

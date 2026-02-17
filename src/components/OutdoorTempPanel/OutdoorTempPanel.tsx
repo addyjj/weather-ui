@@ -12,7 +12,7 @@ export function OutdoorTempPanel({
   feelsLike,
 }: OutdoorTempPanelProps) {
   return (
-    <Panel title="Outdoor Temperature" className={className}>
+    <Panel title="Temperature" className={className}>
       <div className="flex items-baseline gap-2">
         <h3 className="text-7xl font-bold tracking-tighter">
           {temperature}&#176;

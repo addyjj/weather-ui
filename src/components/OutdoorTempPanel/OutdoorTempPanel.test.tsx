@@ -5,7 +5,7 @@ import { OutdoorTempPanel } from "./OutdoorTempPanel";
 describe("OutdoorTempPanel", () => {
   it("renders the panel title", () => {
     render(<OutdoorTempPanel temperature={72} feelsLike={70} />);
-    expect(screen.getByText("Outdoor Temperature")).toBeInTheDocument();
+    expect(screen.getByText("Temperature")).toBeInTheDocument();
   });
 
   it("renders temperature and unit", () => {

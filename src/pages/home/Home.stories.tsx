@@ -10,5 +10,22 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Basic = {
-  args: {},
+  args: {
+    isLoading: false,
+    error: null,
+  },
+} satisfies Story;
+
+export const Loading = {
+  args: {
+    isLoading: true,
+    error: null,
+  },
+} satisfies Story;
+
+export const WithError = {
+  args: {
+    isLoading: false,
+    error: new Error("Failed to load devices"),
+  },
 } satisfies Story;

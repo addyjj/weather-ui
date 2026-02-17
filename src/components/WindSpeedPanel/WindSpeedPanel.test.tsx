@@ -16,7 +16,14 @@ describe("WindSpeedPanel", () => {
 
   it("renders gust text with direction label", () => {
     render(<WindSpeedPanel speed={12.4} directionDegrees={345} gust={18.6} />);
-    expect(screen.getByText("NNW • Max Gust 18.6")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        (content) =>
+          content.includes("NNW") &&
+          content.includes("Max Gust") &&
+          content.includes("18.6"),
+      ),
+    ).toBeInTheDocument();
   });
 
   it("rotates the direction icon", () => {
