@@ -3,14 +3,16 @@ import { Route, Routes } from "react-router";
 import { Home } from "./pages";
 import "./App.css";
 import { AppHeader } from "./components";
-import { useDevices } from "./hooks";
+import { useDevices, useSignalR } from "./hooks";
 
 const queryClient = new QueryClient();
 
 function AppContent() {
   const { data: devices, isLoading, error } = useDevices();
+  const { weatherData } = useSignalR();
   const device = devices?.[0];
-  const deviceData = device?.latestData;
+  // Use real-time weatherData from SignalR if available, otherwise fall back to initial device data
+  const deviceData = weatherData || device?.latestData;
   const lastUpdated = new Date(deviceData?.date || new Date());
 
   return (
@@ -25,7 +27,7 @@ function AppContent() {
           <Route
             path="/"
             element={
-              <Home devices={devices} isLoading={isLoading} error={error} />
+              <Home data={deviceData} isLoading={isLoading} error={error} />
             }
           />
         </Routes>
